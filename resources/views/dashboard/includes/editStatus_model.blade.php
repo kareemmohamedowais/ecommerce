@@ -21,7 +21,6 @@
                 <label for="status">status</label>
                 <select name="status" id="" class="form-control">
                     <option value="pending">{{trans('order_trans.pending')}}</option>
-                        <option value="delivered">{{trans('order_trans.delivered')}}</option>
                         <option value="cancelled">{{trans('order_trans.cancelled')}}</option>
                 </select>
                 {{-- <input type="text" name="id" value="pending"> --}}

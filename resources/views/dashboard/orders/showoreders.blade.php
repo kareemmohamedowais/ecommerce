@@ -80,7 +80,9 @@
             <td>
                 <a href="{{route('orderdetails',$order->id)}}" class="btn btn-sm btn-outline-success">{{trans('order_trans.order_details')}}</a>
                 {{-- <a href="{{route('editstatus',$order->id)}}" class="btn btn-sm btn-outline-primary">edit_atatus</a> --}}
+                @if ($order->status == 'pending')
                 @include('dashboard.includes.add_orderToDelivery_model',['type'=>'addToDelivery','data'=>$order,'routes'=>'order.addToDelivery'])
+                @endif
                 @include('dashboard.includes.editStatus_model',['type'=>'order','data'=>$order,'routes'=>'order.edit'])
                 @include('dashboard.includes.delete_modal',['type'=>'order','data'=>$order,'routes'=>'order.destroy'])
 
