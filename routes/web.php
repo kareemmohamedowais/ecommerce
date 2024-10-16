@@ -63,6 +63,8 @@ Route::group(
             Route::get('/orders',[ ordercontroller::class,'index'])->name('orders.index');
             Route::resource('/reviews_product', ReviewsAdmincontroller::class);
             Route::get('/orderdetails/{id}',[ ordercontroller::class,'orderdetails'])->name('orderdetails');
+            Route::patch('/addToDelivery/{id}',[ ordercontroller::class,'addToDelivery'])->name('order.addToDelivery');
+
             Route::get('/orderdetailsnotify/{id}',[notificationorderscontroller::class,'orderdetailsfornotification'])->name('orderdetailsfornotification');
             Route::get('/markall',[notificationorderscontroller::class,'markallnotify'])->name('markallnotify');
             Route::patch('/editstatus/{id}',[ ordercontroller::class,'editstatus'])->name('order.edit');
@@ -90,6 +92,7 @@ Route::group(
             Route::get('/delivery/search', [dashboard_deliverycontroller::class, 'search'])->name('delivery.search');
             Route::get('/delivery/orderdetails/{id}', [dashboard_deliverycontroller::class, 'showmyorders'])->name('delivery.orderdetails');
             Route::get('/delivery/editstatus/{id}',[ dashboard_deliverycontroller::class,'editstatus'])->name('order.editdelivery');
+            Route::get('/delivery_orders',[ ordercontroller::class,'delivery_orders'])->name('delivery_orders');
 
         });
         //////////////////////////////

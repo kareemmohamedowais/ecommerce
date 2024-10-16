@@ -7,6 +7,7 @@ use App\Models\Order_items;
 use Illuminate\Http\Request;
 use App\Events\quantityproduct;
 use App\Models\Order_addresess;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class dashboard_deliverycontroller extends Controller
@@ -44,16 +45,17 @@ public function showmyorders($id)
     {
         $order = Order::findOrFail($id);
         $user = Auth::user();
-
+        DB::beginTransaction();
         if($order->status != 'completed'){
             $order->tracks()->create([
-                'status'=>'completed',
+                'status'=>'delivered',
                 'message'=>$user->fname .'  delivery',
             ]);
         }
 
-
-
+        $order->deliveryorder->update([
+            'delivery_order_status'=>'done',
+        ]);
 
         $order->update([
             'status'=>'completed',
@@ -61,7 +63,7 @@ public function showmyorders($id)
 
         event(new quantityproduct($order));
 
-
+        DB::commit();
         // if ($order->status === "completed") {
         //     foreach ($order->items as $item) {
         //         $item->product->qty-=$item->quantity;

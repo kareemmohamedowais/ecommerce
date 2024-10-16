@@ -3,7 +3,7 @@
 
 
 @section('title')
-{{trans('delivery.DeliveryDashboard')}}
+DeliveryDashboard
 @endsection
 
 @section('css')
@@ -33,20 +33,20 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">{{trans('delivery.DeliveryDashboard')}}</h1>
+                <h1 class="m-0">DeliveryDashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">{{trans('delivery.Home')}}</a></li>
-                <li class="breadcrumb-item active">{{trans('delivery.DeliveryDashboard')}}</li>
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">DeliveryDashboard</li>
                 </ol>
             </div><!-- /.col -->
             </div><!-- /.row -->
             <div class="container">
                 <form action="{{ route('delivery.search') }}" method="GET" class="mb-4">
                     <div class="input-group">
-                        <input type="text" name="order_number" class="form-control" placeholder="{{trans('delivery.Enter Order Number')}}" required>
-                        <button type="submit" class="btn btn-primary">{{trans('delivery.Search')}}</button>
+                        <input type="text" name="order_number" class="form-control" placeholder="Enter Order Number" required>
+                        <button type="submit" class="btn btn-primary">Search</button>
                     </div>
                 </form>
 
@@ -72,7 +72,7 @@
 
                                 <td>
                                     <a href="{{route('delivery.orderdetails',$order->id)}}" class="btn btn-sm btn-outline-success">{{trans('order_trans.order_details')}}</a>
-                                    <a href="{{route('order.editdelivery',$order->id)}}" class="btn btn-sm btn-outline-primary">{{trans('delivery.complete')}}</a>
+                                    <a href="{{route('order.editdelivery',$order->id)}}" class="btn btn-sm btn-outline-primary">complete</a>
 
                                 </td>
                                 </tr>

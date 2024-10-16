@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\quantityproduct;
 use App\Models\Order;
 use App\Models\Order_items;
 use Illuminate\Http\Request;
+use App\Models\deliveryorder;
+use App\Events\quantityproduct;
 use App\Models\Order_addresess;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class ordercontroller extends Controller
@@ -129,4 +131,30 @@ class ordercontroller extends Controller
     //     $data['orderadresess']=Order_addresess::where('order_id',$id)->first();
     //     return view('dashboard.orders.orderdetails',$data);
     // }
+    public function addToDelivery(Request $request,$id){
+
+        $order = Order::findOrFail($id);
+
+        DB::beginTransaction();
+
+        $deliveryorder = deliveryorder::create([
+            'user_id' =>$request->user_id,
+            'order_number' =>$order->number,
+            'order_id' =>$id,
+        ]);
+
+        $order->update([
+            'status'=>'delivered',
+        ]);
+
+        DB::commit();
+        return redirect()->route('orders.index')->with('success',trans("messages_trans.success_update"));
+
+    }
+    public function delivery_orders(){
+        $route = 'delivery_orders';
+        $user = Auth::user();
+        $orders = $user->deliveryorders;
+        return view('delivery.delivery_orders',compact('route','orders'));
+    }
 }

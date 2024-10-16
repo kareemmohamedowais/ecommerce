@@ -42,51 +42,25 @@
         <thead>
             <tr>
         <th>#</th>
-        <th>{{trans('order_trans.productName')}}</th>
         <th>{{trans('order_trans.orderNumber')}}</th>
-        <th>{{trans('order_trans.price')}}</th>
-        <th>{{trans('order_trans.quantity')}}</th>
+        <th>status</th>
 
 
         </tr>
         </thead>
         <tbody>
-        @foreach ($orderdetails as $orderdetail )
+        @foreach ($orders as $orderdetail )
+        @if ($orderdetail->delivery_order_status == 'notdone')
         <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$orderdetail->product->name}}</td>
-            <td>{{$orderdetail->order->number}}</td>
-            <td>{{$orderdetail->price}}</td>
-            <td>{{$orderdetail->quantity}}</td>
-           
+            <td>{{$orderdetail->order_number}}</td>
+            <td>{{$orderdetail->delivery_order_status}}</td>
             </tr>
+        @endif
         @endforeach
 
     </table>
-    <div style="font-size: 35px;margin-top:10px">
-    <span>{{trans('order_trans.totalPrice')}} : </span>
-    <span class="badge badge-success">{{ $orderdetails->first()->order->total ?? 0 }}</span>
-    </div>
-    <div class="container p-3" style="margin-top: 50px;margin-bottom: 50px">
-        <h4>Order Tracking</h4>
-        <br>
 
-        <table id="example1" class="table table-bordered table-hover">
-
-            <tbody>
-            @foreach ($orderadresess->order->tracks as $track )
-            <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$track->status}}</td>
-
-                <td> edit by => {{$track->message}} </td>
-
-                <td>{{$track->created_at->format('Y-m-d')}}</td>
-                <td>{{$track->created_at->format('h:i')}}</td>
-                </tr>
-            @endforeach
-
-        </table>
     </div>
     </div>
     <!-- /.card-body -->

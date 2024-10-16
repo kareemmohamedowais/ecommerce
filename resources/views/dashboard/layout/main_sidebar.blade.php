@@ -110,6 +110,12 @@
                 <p>dashboard_delivery</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('delivery_orders')}}" class="nav-link {{$route == 'delivery_orders' ? 'active' : ''}}">
+                {{-- <i class="far fa-circle nav-icon"></i> --}}
+                <p>delivery orders</p>
+                </a>
+            </li>
             @endif
             </ul>
         </li>

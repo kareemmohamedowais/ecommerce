@@ -40,6 +40,10 @@ class Order extends Model
     {
         return $this->hasMany(OrderTrack::class, 'order_id');
     }
+    public function deliveryorder()
+    {
+        return $this->hasOne(deliveryorder::class);
+    }
 
     // public function addresses()
     // {
