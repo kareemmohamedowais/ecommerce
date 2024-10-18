@@ -432,7 +432,7 @@
     function addToCart(){
         var product_id = $('#product_id').val();
         var qty = $('#qty_vlaue').val();
-        console.log('product id is : '+ product_id  + ' and qty is : ' + qty);
+        // console.log('product id is : '+ product_id  + ' and qty is : ' + qty);
         $.ajax({
             method : 'POST',
             url : "{{route('product.addToCart')}}",

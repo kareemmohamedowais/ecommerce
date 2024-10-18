@@ -14,6 +14,21 @@ return [
     'add_admin'=>'add_admin',
     'add_delivery'=>'add_delivery',
 
+    'FirstName'=>'FirstName',
+    'LastName'=>'LastName',
+    'Email Address'=>'Email Address',
+    'phone number'=>'phone number',
+    'Address'=>'Address',
+    'country'=>'country',
+    'Password'=>'Password',
+    'admindetails'=>'admindetails',
+    'userdetails'=>'userdetails',
+    'deliverydetails'=>'deliverydetails',
+
+
+
+
+
 
 
 

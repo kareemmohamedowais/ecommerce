@@ -28,5 +28,14 @@ return [
     'paid'=>'paid',
     'failed'=>'failed',
 
+    'message'=>'EditBy',
+    'date'=>'date',
+    'time'=>'time',
+
+    'delete'=>'delete',
+    'add_delivery'=>'add_delivery',
+    'Order Tracking'=>'Order Tracking',
+
+
 
 ];

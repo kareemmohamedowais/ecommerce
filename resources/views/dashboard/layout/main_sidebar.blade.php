@@ -107,13 +107,13 @@
             <li class="nav-item">
                 <a href="{{route('dashboard_delivery')}}" class="nav-link {{$route == 'orderdelivery' ? 'active' : ''}}">
                 {{-- <i class="far fa-circle nav-icon"></i> --}}
-                <p>dashboard_delivery</p>
+                <p>{{__(('main_sidbar_translate.SearchOrder'))}}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('delivery_orders')}}" class="nav-link {{$route == 'delivery_orders' ? 'active' : ''}}">
                 {{-- <i class="far fa-circle nav-icon"></i> --}}
-                <p>delivery orders</p>
+                <p>{{__('main_sidbar_translate.DeliveryOrders')}}</p>
                 </a>
             </li>
             @endif

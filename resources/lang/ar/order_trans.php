@@ -28,6 +28,12 @@ return [
 
     'Close'=>'غلق',
 
+    'message'=>'تم بواسطه',
+    'date'=>'التاريخ',
+    'time'=>'الوقت',
+    'delete'=>'حذف',
+    'add_delivery'=>'اضافه للديليفري',
 
+    'Order Tracking'=>'تتبع الطلب',
 
 ];

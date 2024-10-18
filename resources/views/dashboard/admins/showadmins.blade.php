@@ -57,8 +57,8 @@
             <td><span class="badge badge-success">admin</span></td>
             <td>{{ $user->created_at->format('d/m/Y') }}</td>
             <td>
-                <a href="{{route('showadmins',$user->id)}}" class="btn btn-sm btn-outline-success">userdetails</a>
-                <a href="{{route('admins.edit',$user->id)}}" class="btn btn-sm btn-outline-primary">edit</a>
+                <a href="{{route('showadmins',$user->id)}}" class="btn btn-sm btn-outline-success">{{__('buttons_trans.admindetails')}}</a>
+                <a href="{{route('admins.edit',$user->id)}}" class="btn btn-sm btn-outline-primary">{{__('buttons_trans.edit')}}</a>
                 {{-- @include('dashboard.includes.editStatus_user_model',['type'=>'user','data'=>$user,'routes'=>'users.update']) --}}
                 @include('dashboard.includes.delete_modal',['type'=>'user','data'=>$user,'routes'=>'users.destroy'])
 

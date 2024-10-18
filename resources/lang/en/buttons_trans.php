@@ -10,4 +10,7 @@ return [
     'save'=>'save',
     'update'=>'update',
     'Close'=>'Close',
+    'userdetails'=>'userdetails',
+    'admindetails'=>'admindetails',
+    'deliverydetails'=>'deliverydetails',
 ];

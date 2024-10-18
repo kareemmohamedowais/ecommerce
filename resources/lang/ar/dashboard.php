@@ -8,7 +8,7 @@ return [
     'products' => 'المنتجات',
     'contact' => 'رسائل التواصل',
     'reviews_products'=>'تعليقات المنتجات',
-    'More info'=>'معلومات اخري',
+    'More info'=>'معلومات اضافيه',
     'admins' => 'المسؤلين',
     'deliveries' => 'عملاء التوصيل',
 

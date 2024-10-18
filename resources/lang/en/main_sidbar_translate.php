@@ -14,6 +14,8 @@ return [
     'reviews'=> 'reviews',
     'deliveries'=> 'deliveries',
     'admins'=> 'admins',
+    'SearchOrder'=> 'SearchOrder',
+    'DeliveryOrders'=> 'DeliveryOrders',
 
 ];
 

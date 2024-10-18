@@ -35,7 +35,7 @@
     @method('PUT')
     <div class="col-sm-6">
 <div class="form-group">
-<label for="fname" class="col-md-4 col-form-label text-md-end">{{ __('FirstName') }}</label>
+<label for="fname" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.FirstName') }}</label>
 <input id="fname" value="{{ $user->fname }}" type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus>
 
 @error('fname')
@@ -47,7 +47,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="lname" class="col-md-4 col-form-label text-md-end">{{ __('LastName') }}</label>
+            <label for="lname" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.LastName') }}</label>
             <input id="lname" value="{{ $user->lname }}" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
 
             @error('lname')
@@ -59,7 +59,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="email"  class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+            <label for="email"  class="col-md-4 col-form-label text-md-end">{{ __('users_trans.Email Address') }}</label>
 
 
                 <input id="email"  type="email" value="{{ $user->email }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -73,7 +73,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('phone number') }}</label>
+            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.phone number') }}</label>
 
 
             <input id="phone" type="number" value="{{ $user->phone }}" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
@@ -87,7 +87,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="address1" class="col-md-4 col-form-label text-md-end">{{ __(' Address') }}</label>
+            <label for="address1" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.Address') }}</label>
 
 
             <input id="address1" type="text" value="{{ $user->address1 }}" class="form-control @error('address1') is-invalid @enderror" name="address1" value="{{ old('address1') }}" required autocomplete="address1">
@@ -101,7 +101,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('country') }}</label>
+            <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.country') }}</label>
 
 
             <input id="country" type="text" value="{{ $user->country }}" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country">
@@ -115,7 +115,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group">
-            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('users_trans.Password') }}</label>
 
 
                 <input id="password" type="password"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

@@ -41,9 +41,9 @@
     <table id="example1" class="table table-bordered table-hover">
         <thead>
             <tr>
-        <th>#</th>
         <th>{{trans('order_trans.orderNumber')}}</th>
-        <th>status</th>
+        <th>{{__('delivery.status')}}</th>
+        <th>{{__('delivery.details')}}</th>
 
 
         </tr>
@@ -52,9 +52,18 @@
         @foreach ($orders as $orderdetail )
         @if ($orderdetail->delivery_order_status == 'notdone')
         <tr>
-            <td>{{$loop->iteration}}</td>
             <td>{{$orderdetail->order_number}}</td>
-            <td>{{$orderdetail->delivery_order_status}}</td>
+            <td>
+                <span class="badge badge-danger">{{$orderdetail->delivery_order_status}}</span>
+            </td>
+            <td>
+            <form action="{{ route('delivery.search') }}" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="hidden" name="order_number" class="form-control" value="{{$orderdetail->order_number}}">
+                    <button type="submit" class="btn btn-primary">{{__('delivery.Search')}}</button>
+                </div>
+            </form>
+        </td>
             </tr>
         @endif
         @endforeach

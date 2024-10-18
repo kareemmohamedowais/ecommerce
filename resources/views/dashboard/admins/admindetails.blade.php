@@ -3,7 +3,7 @@
 
 
 @section('title')
-{{trans('users_trans.users')}}
+{{trans('users_trans.admins')}}
 @endsection
 
 @section('css')
@@ -18,11 +18,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">{{trans('users_trans.users')}}</h1>
+                <h1 class="m-0">{{trans('users_trans.admins')}}</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="{{route('users.index')}}">{{trans('users_trans.users')}}</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admins')}}">{{trans('users_trans.admins')}}</a></li>
                 <li class="breadcrumb-item active">{{trans('main_header.dashboard')}}</li>
                 </ol>
             </div><!-- /.col -->
@@ -32,7 +32,7 @@
 {{-- ================================================== --}}
 <div class="col-12" style="margin-top: 20px">
         <div class="card">
-            <div class="card-title text-center"><h3>{{trans('website_trans.customer_details')}}</h3></div>
+            <div class="card-title text-center"><h3>{{trans('users_trans.admindetails')}}</h3></div>
             <div class="card-body">
                 <form >
 

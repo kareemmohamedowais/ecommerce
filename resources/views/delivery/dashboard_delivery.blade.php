@@ -46,7 +46,7 @@ DeliveryDashboard
                 <form action="{{ route('delivery.search') }}" method="GET" class="mb-4">
                     <div class="input-group">
                         <input type="text" name="order_number" class="form-control" placeholder="Enter Order Number" required>
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary">{{__('delivery.Search')}}</button>
                     </div>
                 </form>
 

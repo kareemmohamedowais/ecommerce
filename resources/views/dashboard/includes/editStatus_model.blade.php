@@ -10,7 +10,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{__('order_trans.edit_status')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,7 +18,7 @@
             <form action="{{route($routes,$data->id)}}" method="post">
                 @method('PATCH')
                 @csrf
-                <label for="status">status</label>
+                <label for="status">{{__('order_trans.status')}}</label>
                 <select name="status" id="" class="form-control">
                     <option value="pending">{{trans('order_trans.pending')}}</option>
                         <option value="cancelled">{{trans('order_trans.cancelled')}}</option>

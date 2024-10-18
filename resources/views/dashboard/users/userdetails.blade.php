@@ -32,7 +32,7 @@
 {{-- ================================================== --}}
 <div class="col-12" style="margin-top: 20px">
         <div class="card">
-            <div class="card-title text-center"><h3>{{trans('website_trans.customer_details')}}</h3></div>
+            <div class="card-title text-center"><h3>{{trans('users_trans.userdetails')}}</h3></div>
             <div class="card-body">
                 <form >
 

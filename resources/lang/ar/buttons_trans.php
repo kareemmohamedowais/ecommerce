@@ -10,4 +10,7 @@ return [
     'save'=>'حفظ',
     'update'=>'تحديث',
     'Close'=>'غلق',
+    'userdetails'=>'معلومات المستخدم',
+    'admindetails'=>'معلومات الادمن',
+    'deliverydetails'=>'معلومات عامل التوصيل',
 ];

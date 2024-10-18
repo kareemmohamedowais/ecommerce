@@ -89,18 +89,26 @@
     <span class="badge badge-success">{{ $orderdetails->first()->order->total ?? 0 }}</span>
     </div>
     <div class="container p-3" style="margin-top: 50px;margin-bottom: 50px">
-        <h4>Order Tracking</h4>
+        <h4>{{trans('order_trans.Order Tracking')}}</h4>
         <br>
 
         <table id="example1" class="table table-bordered table-hover">
-
+            <thead>
+                <tr></tr>
+                    <th>#</th>
+                    <th>{{trans('order_trans.status')}}</th>
+                    <th>{{trans('order_trans.message')}}</th>
+                    <th>{{trans('order_trans.date')}}</th>
+                    <th>{{trans('order_trans.time')}}</th>
+                </tr>
+            </thead>
             <tbody>
             @foreach ($orderadresess->order->tracks as $track )
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$track->status}}</td>
 
-                <td> edit by => {{$track->message}} </td>
+                <td> {{$track->message}} </td>
 
                 <td>{{$track->created_at->format('Y-m-d')}}</td>
                 <td>{{$track->created_at->format('h:i')}}</td>

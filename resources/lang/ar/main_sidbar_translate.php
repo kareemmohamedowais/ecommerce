@@ -14,6 +14,8 @@ return [
     'reviews'=> 'التعليقات',
     'deliveries'=> 'عملاء التوصيل',
     'admins'=> 'المسؤلين',
+    'SearchOrder'=> 'بحث الطلب',
+    'DeliveryOrders'=> 'طلبات عامل التوصيل'
 ];
 
 

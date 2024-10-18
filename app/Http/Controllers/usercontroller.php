@@ -190,13 +190,13 @@ class usercontroller extends Controller
     }
     public function showadmins(string $id)
     {
-        $data['route'] = 'users';
+        $data['route'] = 'admins';
         $data['user'] = User::where('id',$id)->first();
         return view('dashboard.admins.admindetails',$data);
     }
     public function showdeliveries(string $id)
     {
-        $data['route'] = 'users';
+        $data['route'] = 'deliveries';
         $data['user'] = User::where('id',$id)->first();
         return view('dashboard.deliveries.deliverydetails',$data);
     }

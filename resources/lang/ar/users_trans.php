@@ -16,6 +16,17 @@ return [
     'add_admin'=>'اضافه ادمن',
     'add_delivery'=>'اضافه ديليفري',
 
+    'FirstName'=>'الاسم الاول',
+    'LastName'=>'الاسم الخير',
+    'Email Address'=>'البريد الالكتروني',
+    'phone number'=>'رقم الهاتف',
+    'Address'=>'العنوان',
+    'country'=>'الدوله',
+    'Password'=>'كلمه السر',
+
+    'admindetails'=>'معلومات الادمن',
+    'userdetails'=>'معلومات المستخدم',
+    'deliverydetails'=>'معلومات عامل التوصيل',
 
 
 
