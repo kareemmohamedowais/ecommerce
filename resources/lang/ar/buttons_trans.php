@@ -13,4 +13,5 @@ return [
     'userdetails'=>'معلومات المستخدم',
     'admindetails'=>'معلومات الادمن',
     'deliverydetails'=>'معلومات عامل التوصيل',
+    'deliveryOrders'=>'طلبات عامل التوصيل',
 ];

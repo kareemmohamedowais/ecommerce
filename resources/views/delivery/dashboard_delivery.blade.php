@@ -33,12 +33,12 @@ DeliveryDashboard
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">DeliveryDashboard</h1>
+                <h1 class="m-0">{{trans('delivery.DeliveryDashboard')}}</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">DeliveryDashboard</li>
+                <li class="breadcrumb-item"><a href="#">{{trans('delivery.Home')}}</a></li>
+                <li class="breadcrumb-item active">{{trans('delivery.DeliveryDashboard')}}</li>
                 </ol>
             </div><!-- /.col -->
             </div><!-- /.row -->
@@ -72,7 +72,7 @@ DeliveryDashboard
 
                                 <td>
                                     <a href="{{route('delivery.orderdetails',$order->id)}}" class="btn btn-sm btn-outline-success">{{trans('order_trans.order_details')}}</a>
-                                    <a href="{{route('order.editdelivery',$order->id)}}" class="btn btn-sm btn-outline-primary">complete</a>
+                                    <a href="{{route('order.editdelivery',$order->id)}}" class="btn btn-sm btn-outline-primary">{{trans('delivery.complete')}}</a>
 
                                 </td>
                                 </tr>

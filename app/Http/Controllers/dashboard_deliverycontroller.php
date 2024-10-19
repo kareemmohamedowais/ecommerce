@@ -48,7 +48,7 @@ public function showmyorders($id)
         DB::beginTransaction();
         if($order->status != 'completed'){
             $order->tracks()->create([
-                'status'=>'delivered',
+                'status'=>'completed',
                 'message'=>$user->fname .'  delivery',
             ]);
         }
@@ -64,15 +64,7 @@ public function showmyorders($id)
         event(new quantityproduct($order));
 
         DB::commit();
-        // if ($order->status === "completed") {
-        //     foreach ($order->items as $item) {
-        //         $item->product->qty-=$item->quantity;
-        //         $item->product->update([
-        //             'qty'=>$item->product->qty
-        //         ]);
-        //         // dd($item->quantity);
-        //     }
-        // }
+
         return redirect()->route('dashboard_delivery')->with('success',trans("messages_trans.success_update"));
 
 

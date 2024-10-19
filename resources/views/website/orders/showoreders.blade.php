@@ -62,12 +62,14 @@ my orders
                 <span class="badge bg-success">{{trans('order_trans.completed')}}</span>
             @elseif ($order->status == 'cancelled')
                 <span class="badge bg-danger">{{trans('order_trans.cancelled')}}</span>
+            @elseif ($order->status == 'delivered')
+                <span class="badge bg-info">{{trans('order_trans.delivered')}}</span>
             @else
             <span class="badge bg-warning">{{trans('order_trans.pending')}}</span>
 
             @endif</td>
 
-            
+
             <td>
                 <a href="{{route('frontorderdetails',$order->id)}}" class="btn btn-sm btn-outline-success">{{trans('order_trans.order_details')}}</a>
                 @if ($order->status == 'pending')

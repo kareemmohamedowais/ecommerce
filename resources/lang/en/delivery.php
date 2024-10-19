@@ -8,6 +8,8 @@ return [
     'complete' => 'complete',
     'status' => 'status',
     'details' => 'details',
+    'orders_done' => 'orders_done',
+    'orders_notdone' => 'orders_notdone',
     'Enter Order Number' => 'Enter Order Number',
 
 

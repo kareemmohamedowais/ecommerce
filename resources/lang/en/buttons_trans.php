@@ -13,4 +13,5 @@ return [
     'userdetails'=>'userdetails',
     'admindetails'=>'admindetails',
     'deliverydetails'=>'deliverydetails',
+    'deliveryOrders'=>'deliveryOrders',
 ];

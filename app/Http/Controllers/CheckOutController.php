@@ -55,7 +55,8 @@ class CheckOutController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'number'=>"2024".$randomNumber,
-            'total'=>$request->total_price
+            'total'=>$request->total_price,
+            'status'=>'pending',
         ]);
 
         //

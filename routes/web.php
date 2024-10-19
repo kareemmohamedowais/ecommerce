@@ -60,6 +60,7 @@ Route::group(
             Route::get('/deliveries/create',[usercontroller::class,'deliveriescreate'])->name('deliveries.create');
             Route::post('/delivery/store',[usercontroller::class,'deliverystore'])->name('delivery.store');
             Route::get('/deliveries/show/{id}',[usercontroller::class,'showdeliveries'])->name('showdeliveries');
+            Route::get('/deliveryOrders/{id}',[usercontroller::class,'deliveryOrders'])->name('deliveryOrders');
             Route::get('/orders',[ ordercontroller::class,'index'])->name('orders.index');
             Route::resource('/reviews_product', ReviewsAdmincontroller::class);
             Route::get('/orderdetails/{id}',[ ordercontroller::class,'orderdetails'])->name('orderdetails');

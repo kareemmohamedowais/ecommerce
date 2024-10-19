@@ -143,6 +143,12 @@ class ordercontroller extends Controller
             'order_id' =>$id,
         ]);
 
+        if($order->status != 'delivered'){
+            $order->tracks()->create([
+                'status'=>'delivered',
+                'message'=>Auth::user()->fname .'  admin',
+            ]);
+        }
         $order->update([
             'status'=>'delivered',
         ]);
@@ -157,4 +163,6 @@ class ordercontroller extends Controller
         $orders = $user->deliveryorders;
         return view('delivery.delivery_orders',compact('route','orders'));
     }
+
+
 }
