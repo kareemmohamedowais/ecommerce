@@ -16,8 +16,7 @@ Cart
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
                     <div>
-{{--                        <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i--}}
-{{--                                    class="fas fa-angle-down mt-1"></i></a></p>--}}
+
                     </div>
                 </div>
 
@@ -34,7 +33,6 @@ Cart
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
                                 <p class="lead fw-normal mb-2">{{$product_cart->Product->name}}</p>
-{{--                                <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>--}}
                             </div>
                             @if ($product_cart->Product->qty > $product_cart->qty)
 
@@ -65,7 +63,6 @@ Cart
                                 </h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-{{--                                <a href="" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>--}}
                                 @include('website.includes.delete_modal',['type'=>'cart','data'=>$product_cart,'routes'=>'cart.destroy'])
                             </div>
                         </div>

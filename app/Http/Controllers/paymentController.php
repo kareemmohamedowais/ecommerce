@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
         public function payment()
         {
 
+            
             Stripe::setApiKey(env('STRIPE_SECRET'));
             DB::beginTransaction();
             $items = Cart::where('user_id', Auth::user()->id)->get();
@@ -61,7 +62,7 @@ use Illuminate\Support\Facades\Auth;
             $order->update([
                 'payment_status'=>'paid'
             ]);
-            
+
             Cart::where('user_id', Auth::id())->delete();
 
             return redirect()->route('home')->with('success', 'تم الدفع بنجاح، وتم إفراغ السلة.');

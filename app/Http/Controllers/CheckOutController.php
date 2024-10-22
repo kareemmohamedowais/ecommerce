@@ -46,15 +46,16 @@ class CheckOutController extends Controller
             'pincode' => ['required','max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
         ]);
+
         DB::beginTransaction();
         try {
 
-        $randomNumber = mt_rand(10, 9999);
+        $randomNumber = mt_rand(10, 99999);
 
 
         $order = Order::create([
             'user_id' => Auth::id(),
-            'number'=>"2024".$randomNumber,
+            'number' => date("Y") . $randomNumber,
             'total'=>$request->total_price,
             'status'=>'pending',
         ]);
@@ -99,7 +100,7 @@ class CheckOutController extends Controller
 
 
             $order->tracks()->create([
-                'status'=>$request->status ?? 'pending',
+                'status'=>'pending',
                 'message'=>$user_create_order .'  user',
             ]);
 
@@ -114,9 +115,9 @@ class CheckOutController extends Controller
     return redirect()->route('payment');
 
     }
-    public function payment(){
-        return view('website.payment.payment');
-    }
+    // public function payment(){
+    //     return view('website.payment.payment');
+    // }
 
 
 }

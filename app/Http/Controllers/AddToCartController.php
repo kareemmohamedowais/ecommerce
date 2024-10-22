@@ -23,7 +23,10 @@ use Illuminate\Http\Request;
         $qty = $request->qty;
         $user_id = Auth::id();
 
-        if(Auth::check()){
+        if(Auth::check() ){
+
+            if(Auth::user()->is_admin == 0){
+
 
             $product =Product::where( 'id',$product_id)->exists();
             if($product){
@@ -45,7 +48,9 @@ use Illuminate\Http\Request;
             }else{
                 return response()->json(['msg'=>'product not found']);
             }
-
+        }else{
+            return response()->json(['msg'=>'Adding products is for the user only']);
+        }
         }else{
             return response()->json(['msg'=>'login first']);
         }

@@ -61,6 +61,8 @@ class product extends Model
                     ->avg('rating')));
     }
 
+
+
     public function orderItems() {
         return $this->hasMany(Order_items::class, 'product_id'); // تأكد من وجود المفتاح الصحيح
     }
@@ -73,7 +75,6 @@ class product extends Model
     //                             $query->where('product_id', $product_id);
     //                         })
     //                         ->exists();
-
     //     return $hasPurchased;
     // }
 

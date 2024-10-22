@@ -197,7 +197,7 @@ class usercontroller extends Controller
     public function showdeliveries(string $id)
     {
         $data['route'] = 'deliveries';
-
+        $data['user'] = User::where('id',$id)->first();
         return view('dashboard.deliveries.deliverydetails',$data);
     }
     public function deliveryOrders(string $id)

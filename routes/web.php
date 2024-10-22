@@ -88,7 +88,7 @@ Route::group(
 
     ],function(){
           //////////////////////////////
-          Route::middleware(['is_delivery'])->group(function () {
+        Route::middleware(['is_delivery'])->group(function () {
             Route::get('dashboard_delivery',[dashboard_deliverycontroller::class,'index'])->name('dashboard_delivery');
             Route::get('/delivery/search', [dashboard_deliverycontroller::class, 'search'])->name('delivery.search');
             Route::get('/delivery/orderdetails/{id}', [dashboard_deliverycontroller::class, 'showmyorders'])->name('delivery.orderdetails');
@@ -102,7 +102,7 @@ Route::group(
         Route::post('cart/update',[AddToCartController::class,'update'])->name('cart.update');
         Route::get('checkout/',[CheckOutController::class,'index'])->name('checkout.index');
         Route::post('checkout/CreateOrder',[CheckOutController::class,'CreateOrder'])->name('createorder');
-        Route::get('payment',[CheckOutController::class,'payment'])->name('payment');
+        // Route::get('payment',[CheckOutController::class,'payment'])->name('payment');
         Route::get('/website/contact', [contactus::class,'index'])->name('contact');
         Route::post('/website/contact/send', [contactus::class,'store'])->name('contact.store');
         Route::get('Myoreders',[ordercontroller::class,'showmyorders'])->name('showmyorders');
