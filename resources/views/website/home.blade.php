@@ -1,7 +1,7 @@
     @extends('layouts.master')
 
     @section('title')
-    e-commerce
+    {{__('website_trans.E-Commerce Platform')}}
     @endsection
     @push('style')
     <style>
@@ -36,10 +36,10 @@
                                             <div class="card-body" style="margin-top: 150px">
                                                 <h5 class="card-title">{{$product->name}}</h5>
                                                 <p class="card-text">{{$product->meta_description}}</p>
-                                                <p class="card-text"><small class="text-body-secondary">{{$product->meta_title}}</small></p>
+                                                <p class="card-text"><small class="text-body-secondary">{{$product->short_description}}</small></p>
                                                 {{-- <h4><span>Price:</span></h4> --}}
                                                 <h4>
-                                                <h5 >Price:
+                                                <h5 >{{__('website_trans.Price')}}:
                                                     {{$product->selling_price}}
                                                 </h5>
                                                     <span>
@@ -60,20 +60,7 @@
 
                                 <!-- End Single Slider -->
                                 <!-- Start Single Slider -->
-                                {{-- <div class="single-slider"
-                                    style="background-image: url(https://via.placeholder.com/800x500);">
-                                    <div class="content">
-                                        <h2><span>Big Sale Offer</span>
-                                            Get the Best Deal on CCTV Camera
-                                        </h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut
-                                            labore dolore magna aliqua.</p>
-                                        <h3><span>Combo Only:</span> $590.00</h3>
-                                        <div class="button">
-                                            <a href="product-grids.html" class="btn">Shop Now</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                
                                 <!-- End Single Slider -->
                             </div>
                             <!-- End Hero Slider -->
@@ -81,7 +68,7 @@
                     </div>
 
                     <div class="col-lg-4 col-12" style="height: 700px">
-                        <h4>TopSellingProduct</h4>
+                        <h4>{{__('website_trans.TopSellingProduct')}}</h4>
                     <!-- Start Single Product -->
                     <div class="single-product">
                         <div class="product-image" style="height: 260px" >
@@ -92,7 +79,7 @@
                         </div>
                         <div class="product-info">
                             <h4 class="title">
-                                <p>TopSellingProduct</p>
+                                <p>{{__('website_trans.TopSellingProduct')}}</p>
 
                             </h4>
                             <h4 class="title">
@@ -162,372 +149,15 @@
         <!-- End Trending Product Area -->
 
         <!-- Start Banner Area -->
-        {{-- <section class="banner section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="single-banner" style="background-image:url('https://via.placeholder.com/620x340')">
-                            <div class="content">
-                                <h2>Smart Watch 2.0</h2>
-                                <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
-                                <div class="button">
-                                    <a href="product-grids.html" class="btn">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="single-banner custom-responsive-margin"
-                            style="background-image:url('https://via.placeholder.com/620x340')">
-                            <div class="content">
-                                <h2>Smart Headphone</h2>
-                                <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
-                                    incididunt ut labore.</p>
-                                <div class="button">
-                                    <a href="product-grids.html" class="btn">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
+        
         <!-- End Banner Area -->
 
         <!-- Start Special Offer -->
-        {{-- <section class="special-offer section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title">
-                            <h2>Special Offer</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 col-md-12 col-12">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single Product -->
-                                <div class="single-product">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/335x335" alt="#">
-                                        <div class="button">
-                                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                                Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="category">Camera</span>
-                                        <h4 class="title">
-                                            <a href="product-grids.html">WiFi Security Camera</a>
-                                        </h4>
-                                        <ul class="review">
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><span>5.0 Review(s)</span></li>
-                                        </ul>
-                                        <div class="price">
-                                            <span>$399.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single Product -->
-                                <div class="single-product">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/335x335" alt="#">
-                                        <div class="button">
-                                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                                Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="category">Laptop</span>
-                                        <h4 class="title">
-                                            <a href="product-grids.html">Apple MacBook Air</a>
-                                        </h4>
-                                        <ul class="review">
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><span>5.0 Review(s)</span></li>
-                                        </ul>
-                                        <div class="price">
-                                            <span>$899.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single Product -->
-                                <div class="single-product">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/335x335" alt="#">
-                                        <div class="button">
-                                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                                Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="category">Speaker</span>
-                                        <h4 class="title">
-                                            <a href="product-grids.html">Bluetooth Speaker</a>
-                                        </h4>
-                                        <ul class="review">
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star"></i></li>
-                                            <li><span>4.0 Review(s)</span></li>
-                                        </ul>
-                                        <div class="price">
-                                            <span>$70.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single Product -->
-                                <div class="single-product">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/335x335" alt="#">
-                                        <div class="button">
-                                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                                Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="category">Speaker</span>
-                                        <h4 class="title">
-                                            <a href="product-grids.html">Bluetooth Speaker</a>
-                                        </h4>
-                                        <ul class="review">
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star"></i></li>
-                                            <li><span>4.0 Review(s)</span></li>
-                                        </ul>
-                                        <div class="price">
-                                            <span>$70.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <!-- Start Single Product -->
-                                <div class="single-product">
-                                    <div class="product-image">
-                                        <img src="https://via.placeholder.com/335x335" alt="#">
-                                        <div class="button">
-                                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                                Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <span class="category">Speaker</span>
-                                        <h4 class="title">
-                                            <a href="product-grids.html">Bluetooth Speaker</a>
-                                        </h4>
-                                        <ul class="review">
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star-filled"></i></li>
-                                            <li><i class="lni lni-star"></i></li>
-                                            <li><span>4.0 Review(s)</span></li>
-                                        </ul>
-                                        <div class="price">
-                                            <span>$70.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Product -->
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-12">
-                        <div class="offer-content">
-                            <div class="image">
-                                <img src="https://via.placeholder.com/510x600" alt="#">
-                                <span class="sale-tag">-50%</span>
-                            </div>
-                            <div class="text">
-                                <h2><a href="product-grids.html">Bluetooth Headphone</a></h2>
-                                <ul class="review">
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><i class="lni lni-star-filled"></i></li>
-                                    <li><span>5.0 Review(s)</span></li>
-                                </ul>
-                                <div class="price">
-                                    <span>$200.00</span>
-                                    <span class="discount-price">$400.00</span>
-                                </div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry incididunt ut
-                                    eiusmod tempor labores.</p>
-                            </div>
-                            <div style="background: rgb(204, 24, 24);" class="alert">
-                                <h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
+        
         <!-- End Special Offer -->
 
         <!-- Start Home Product List -->
-        {{-- <section class="home-product-list section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-12 custom-responsive-margin">
-                        <h4 class="list-title">Best Sellers</h4>
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">GoPro Hero4 Silver</a>
-                                </h3>
-                                <span>$287.99</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Puro Sound Labs BT2200</a>
-                                </h3>
-                                <span>$95.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">HP OfficeJet Pro 8710</a>
-                                </h3>
-                                <span>$120.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12 custom-responsive-margin">
-                        <h4 class="list-title">New Arrivals</h4>
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">iPhone X 256 GB Space Gray</a>
-                                </h3>
-                                <span>$1150.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Canon EOS M50 Mirrorless Camera</a>
-                                </h3>
-                                <span>$950.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Microsoft Xbox One S</a>
-                                </h3>
-                                <span>$298.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <h4 class="list-title">Top Rated</h4>
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Samsung Gear 360 VR Camera</a>
-                                </h3>
-                                <span>$68.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Samsung Galaxy S9+ 64 GB</a>
-                                </h3>
-                                <span>$840.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <div class="single-list">
-                            <div class="list-image">
-                                <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
-                            </div>
-                            <div class="list-info">
-                                <h3>
-                                    <a href="product-grids.html">Zeus Bluetooth Headphones</a>
-                                </h3>
-                                <span>$28.00</span>
-                            </div>
-                        </div>
-                        <!-- End Single List -->
-                    </div>
-                </div>
-            </div>
-        </section> --}}
+        
         <!-- End Home Product List -->
 
         <!-- Start Brands Area -->
@@ -535,7 +165,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                        <h2 class="title">Popular Brands</h2>
+                        <h2 class="title">{{__('website_trans.Popular Brands')}}</h2>
                     </div>
                 </div>
 

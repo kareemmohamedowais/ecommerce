@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Cart
+{{__('website_trans.Cart')}}
 @endsection
 @push('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,7 +14,7 @@ Cart
             <div class="col-10">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
+                    <h3 class="fw-normal mb-0 text-black">{{__('website_trans.Shopping Cart')}}</h3>
                     <div>
 
                     </div>
@@ -52,8 +52,8 @@ Cart
                             </div>
                             @else
                                 <div class="col-md-3 col-lg-3 col-xl-2 offset-lg-1">
-                                    <h5 class="mb-0">Out of Stock</h5>
-                                    <span class="mb-0">Max Stock Is : {{$product_cart->qty}}</span>
+                                    <h5 class="mb-0">{{__('website_trans.Out of Stock')}}</h5>
+                                    <span class="mb-0">{{__('website_trans.Max Stock Is')}} : {{$product_cart->qty}}</span>
                                 </div>
                             @endif
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
@@ -70,13 +70,13 @@ Cart
                 </div>
                     @php $total_price += $product_cart->Product->selling_price * $product_cart->qty ; @endphp
                 @empty
-                    <h6>there are no products</h6>
+                    <h6>{{__('website_trans.No products in cart')}}</h6>
 
                 @endforelse
             </div>
             <div class="row justify-content-center" style="margin-bottom: 30px">
                 <div class="col-4">
-                    <h3 id="total">Total Price : {{$total_price}}</h3>
+                    <h3 id="total">{{__('website_trans.Total Price')}} : {{$total_price}}</h3>
                 </div>
                 @if ($total_price!=0)
                 <div class="col-4">

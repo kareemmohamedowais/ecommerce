@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('title')
-Contact Us
+{{__('website_trans.Contact Us')}}
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@ Contact Us
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">Contact Us</h1>
+                        <h1 class="page-title">{{__('website_trans.Contact Us')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Contact</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}} </a></li>
+                        <li>{{__('website_trans.Contact Us')}}</li>
                     </ul>
                 </div>
             </div>
@@ -33,9 +33,8 @@ Contact Us
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h2>Contact Us</h2>
-                            <p>There are many variations of passages of Lorem
-                                Ipsum available, but the majority have suffered alteration in some form.</p>
+                            <h2>{{__('website_trans.Contact Us')}}</h2>
+                            
                         </div>
                     </div>
                 </div>
@@ -46,32 +45,23 @@ Contact Us
                                 <!-- Start Single Info -->
                                 <div class="single-info">
                                     <i class="lni lni-map"></i>
-                                    <h3>Address</h3>
+                                    <h3>{{__('website_trans.Address')}}</h3>
                                     <ul>
-                                        <li>44 Shirley Ave. West Chicago,<br> IL 60185, USA.</li>
+                                        <li>bani-suif</li>
                                     </ul>
                                 </div>
                                 <!-- End Single Info -->
                                 <!-- Start Single Info -->
                                 <div class="single-info">
                                     <i class="lni lni-phone"></i>
-                                    <h3>Call us on</h3>
+                                    <h3>{{__('website_trans.Call us on')}}</h3>
                                     <ul>
-                                        <li><a href="tel:+18005554400">+1 800 555 44 00 (Toll free)</a></li>
-                                        <li><a href="tel:+321556667890">+321 55 666 7890</a></li>
+                                        <li><a href="tel:+201113604940">+201113604940 (Toll free)</a></li>
                                     </ul>
                                 </div>
                                 <!-- End Single Info -->
                                 <!-- Start Single Info -->
-                                <div class="single-info">
-                                    <i class="lni lni-envelope"></i>
-                                    <h3>Mail at</h3>
-                                    <ul>
-                                        <li><a href="mailto:support@shopgrids.com">support@shopgrids.com</a>
-                                        </li>
-                                        <li><a href="mailto:career@shopgrids.com">career@shopgrids.com</a></li>
-                                    </ul>
-                                </div>
+                                
                                 <!-- End Single Info -->
                             </div>
                         </div>
@@ -83,7 +73,7 @@ Contact Us
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <input name="name" type="text" placeholder="Your Name"
+                                                    <input name="name" type="text" placeholder="{{(__('website_trans.Your Name'))}}"
                                                         required="required" class="@error('name') is-invalid @enderror">
                                                 </div>
                                                 @error('name')
@@ -93,7 +83,7 @@ Contact Us
 
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <input name="sub" type="text" placeholder="Your Subject"
+                                                    <input name="sub" type="text" placeholder="{{(__('website_trans.Your Subject'))}}"
                                                         required="required" class="@error('sub') is-invalid @enderror">
                                                 </div>
                                                 @error('sub')
@@ -102,7 +92,7 @@ Contact Us
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <input name="email" type="email" placeholder="Your Email"
+                                                    <input name="email" type="email" placeholder="{{(__('website_trans.Your Email'))}}"
                                                         required="required" class="@error('email') is-invalid @enderror">
                                                 </div>
                                                 @error('email')
@@ -111,7 +101,7 @@ Contact Us
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-12">
                                                 <div class="form-group">
-                                                    <input name="phone" type="text" placeholder="Your Phone"
+                                                    <input name="phone" type="text" placeholder="{{(__('website_trans.Your Phone'))}}"
                                                         required="required" class="@error('phone') is-invalid @enderror">
                                                 </div>
                                                 @error('phone')
@@ -120,7 +110,7 @@ Contact Us
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group message">
-                                                    <textarea name="msg" placeholder="Your Message" required class="@error('msg') is-invalid @enderror"></textarea>
+                                                    <textarea name="msg" placeholder="{{__('website_trans.Your Message')}}" required class="@error('msg') is-invalid @enderror"></textarea>
                                                 </div>
                                                 @error('msg')
                                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -128,7 +118,7 @@ Contact Us
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group button">
-                                                    <button type="submit" class="btn ">Submit Message</button>
+                                                    <button type="submit" class="btn ">{{__('website_trans.Submit Message')}}</button>
                                                 </div>
                                             </div>
                                         </div>

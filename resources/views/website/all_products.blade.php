@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('title')
-products
+{{__('website_trans.Products')}}
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@ products
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">products</h1>
+                        <h1 class="page-title">{{__('website_trans.Products')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>products</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}} </a></li>
+                        <li>{{__('website_trans.Products')}}</li>
                     </ul>
                 </div>
             </div>
@@ -32,9 +32,8 @@ products
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2> Products</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form.</p>
+                        <h2> {{__('website_trans.Products')}}</h2>
+                        
                     </div>
                 </div>
             </div>

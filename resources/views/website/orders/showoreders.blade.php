@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('title')
-my orders
+{{__('website_trans.MyOrders')}}
 @endsection
 
 @section('css')
@@ -17,13 +17,16 @@ my orders
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">My Orders</h1>
+                        <h1 class="page-title">{{__('website_trans.MyOrders')}}
+                        </h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>My Orders</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}}
+                            </a></li>
+                        <li>{{__('website_trans.MyOrders')}}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +46,7 @@ my orders
         <thead>
             <tr>
         <th>#</th>
-        <th>name</th>
+        <th>{{trans('website_trans.Name')}}</th>
         <th>{{trans('order_trans.number')}}</th>
         <th>{{trans('order_trans.totalPrice')}}</th>
         <th>{{trans('order_trans.status')}}</th>
@@ -74,7 +77,7 @@ my orders
                 <a href="{{route('frontorderdetails',$order->id)}}" class="btn btn-sm btn-outline-success">{{trans('order_trans.order_details')}}</a>
                 @if ($order->status == 'pending')
 
-                <a href="{{route('CancelOrder',$order->id)}}" class="btn btn-sm btn-outline-danger">CancelOrder</a>
+                <a href="{{route('CancelOrder',$order->id)}}" class="btn btn-sm btn-outline-danger">{{__('website_trans.CancelOrder')}}</a>
                 @endif
                 {{-- @include('dashboard.includes.editStatus_model',['type'=>'order','data'=>$order,'routes'=>'order.edit']) --}}
             </td>

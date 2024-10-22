@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Checkout
+{{__('website_trans.checkout')}}
 @endsection
 
 @section('content')
@@ -12,14 +12,13 @@ Checkout
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">checkout</h1>
+                        <h1 class="page-title">{{__('website_trans.checkout')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="index.html">Shop</a></li>
-                        <li>checkout</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}} </a></li>
+                        <li>{{__('website_trans.checkout')}}</li>
                     </ul>
                 </div>
             </div>
@@ -43,8 +42,8 @@ Checkout
                                 <th>#</th>
                                 <th>{{trans('website_trans.product')}}</th>
                                 <th>{{trans('website_trans.quantity')}}</th>
+                                <th>{{__('website_trans.price for qty')}}</th>
                                 <th>{{trans('website_trans.selling_price')}}</th>
-                                <th>price for qty</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -64,7 +63,7 @@ Checkout
                             </tbody>
                         </table>
                         <div class="col-8">
-                            <h5 id="total">Total Price : {{$total_price}}</h5>
+                            <h5 id="total">{{__('website_trans.Total Price')}} : {{$total_price}}</h5>
                         </div>
                     </div>
                     {{-- <button type="submit">Place Order</button> --}}
@@ -90,52 +89,52 @@ Checkout
                             <div class="row">
                                 <div class="col">
                                     <label for="firstname" class="form-label">{{trans('website_trans.first_name')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->fname}}" name="fname"   id="firstname" placeholder="your first name">
+                                    <input type="text" class="form-control" value="{{$user->fname}}" name="fname"   id="firstname" placeholder="{{trans('website_trans.first_name')}}">
                                 </div>
                                 <div class="col">
                                     <label for="lastname" class="form-label">{{trans('website_trans.last_name')}}</label>
-                                    <input type="text" value="{{$user->lname}}" class="form-control" name="lname"  id="lastname" placeholder="your last name">
+                                    <input type="text" value="{{$user->lname}}" class="form-control" name="lname"  id="lastname" placeholder="{{trans('website_trans.last_name')}}">
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="email" class="form-label">{{trans('website_trans.email')}}</label>
-                                    <input type="email" value="{{$user->email}}" class="form-control" name="email"  id="email" placeholder="your email">
+                                    <input type="email" value="{{$user->email}}" class="form-control" name="email"  id="email" placeholder="{{trans('website_trans.email')}}">
                                 </div>
                                 <div class="col">
                                     <label for="phone" class="form-label">{{trans('website_trans.phone')}}</label>
-                                    <input type="phone" class="form-control" value="{{$user->phone}}" name="phone"  id="phone" placeholder="your phone">
+                                    <input type="phone" class="form-control" value="{{$user->phone}}" name="phone"  id="phone" placeholder="{{trans('website_trans.phone')}}">
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="address1" class="form-label">{{trans('website_trans.address_1')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->address1}}" name="address1"  id="address1" placeholder="address1">
+                                    <input type="text" class="form-control" value="{{$user->address1}}" name="address1"  id="address1" placeholder="{{trans('website_trans.address_1')}}">
                                 </div>
                                 <div class="col">
                                     <label for="address2" class="form-label">{{trans('website_trans.address_2')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->address2}}" name="address2"  id="address2" placeholder="address2">
+                                    <input type="text" class="form-control" value="{{$user->address2}}" name="address2"  id="address2" placeholder="{{trans('website_trans.address_2')}}">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="city" class="form-label">{{trans('website_trans.city')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->city}}" name="city"  id="city" placeholder="city">
+                                    <input type="text" class="form-control" value="{{$user->city}}" name="city"  id="city" placeholder="{{trans('website_trans.city')}}">
                                 </div>
                                 <div class="col">
                                     <label for="country" class="form-label">{{trans('website_trans.country')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->country}}" name="country"  id="country" placeholder="country">
+                                    <input type="text" class="form-control" value="{{$user->country}}" name="country"  id="country" placeholder="{{trans('website_trans.country')}}">
                                 </div>
                                 <div class="col">
                                     <label for="pincode" class="form-label">{{trans('website_trans.pincode')}}</label>
-                                    <input type="text" class="form-control" value="{{$user->pincode}}" name="pincode"  id="pincode" placeholder="pincode">
+                                    <input type="text" class="form-control" value="{{$user->pincode}}" name="pincode"  id="pincode" placeholder="{{trans('website_trans.pincode')}}">
                                 </div>
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
                             </div>
                             <div class="col-8" style="margin-top: 20px; margin-left:250px">
-                                <button type="submit" class="btn btn-success">Place Order</button>
+                                <button type="submit" class="btn btn-success">{{__('website_trans.place_order')}}</button>
                             </div>
                         </form>
                     </div>

@@ -133,7 +133,7 @@ login
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror                            </div>
-                            <div class="d-flex flex-wrap justify-content-between bottom-content">
+                            {{-- <div class="d-flex flex-wrap justify-content-between bottom-content">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -145,7 +145,9 @@ login
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif                            </div>
+                                @endif                            </div> --}}
+                                    <br>
+                                    
                             <div class="button">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}

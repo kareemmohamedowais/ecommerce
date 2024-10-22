@@ -3,9 +3,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Trending Product</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                        suffered alteration in some form.</p>
+                    <h2>{{__('website_trans.Trending Product')}}</h2>
+                    <p>{{__('website_trans.trend_desc')}}</p>
                 </div>
             </div>
         </div>

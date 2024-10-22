@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('title')
-{{$category->slug}}
+{{$category->name}}
 @endsection
 
 @section('content')
@@ -12,13 +12,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">categories</h1>
+                        <h1 class="page-title">{{__('website_trans.Categories')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>{{$category->slug}}</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}} </a></li>
+                        <li>{{$category->name}}</li>
                     </ul>
                 </div>
             </div>
@@ -56,9 +56,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2> Products</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form.</p>
+                        <h2>{{trans('website_trans.Products')}} </h2>
+                        {{-- <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form.</p> --}}
                     </div>
                 </div>
             </div>

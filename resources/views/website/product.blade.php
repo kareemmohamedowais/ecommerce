@@ -2,7 +2,7 @@
 @extends('layouts.master')
 
 @section('title')
-{{$product->slug}}
+{{$product->name}}
 @endsection
 @push('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,14 +15,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">Product-details</h1>
+                        <h1 class="page-title">{{__('website_trans.Product-details')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
+                        <li><a href="index.html"><i class="lni lni-home"></i> {{__('website_trans.Home')}}</a></li>
                         {{-- <li>{{$category->slug}}</li> --}}
-                        <li>{{$product->slug}}</li>
+                        <li>{{$product->name}}</li>
                     </ul>
                 </div>
             </div>
@@ -98,12 +98,7 @@
                                     </div>
                                     @endif
                                     <div class="col">
-                                        {{-- <h4 class="py-4">{{trans('website_trans.add_to_wishlist')}}</h4>
-                                        <div class="input-group mb-3">
-                                            <button class="btn btn-danger">
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
-                                            </button>
-                                        </div> --}}
+                                    
                                     </div>
                                 </div>
 
@@ -173,7 +168,7 @@
 
                             <button type="button" class="btn review-btn" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
-                                Add Review
+                                {{__('reviews_trans.Add Review')}}
                             </button>
 
                             @endif
@@ -185,7 +180,7 @@
                     <div class="col-lg-8 col-12">
                         <div class="single-block">
                             <div class="reviews">
-                                <h4 class="title">Latest Reviews</h4>
+                                <h4 class="title">{{__('website_trans.Latest Reviews')}}</h4>
                                 <!-- Start Single Review -->
                                 {{-- @dd($product->reviews) --}}
                                 @foreach ($product->paginatedReviews(10) as $reviews)

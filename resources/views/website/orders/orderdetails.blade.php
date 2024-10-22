@@ -3,7 +3,7 @@
 @extends('layouts.master')
 
 @section('title')
-order_details
+{{__('website_trans.Order-details')}}
 @endsection
 
 @section('css')
@@ -19,13 +19,13 @@ order_details
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="breadcrumbs-content">
-                        <h1 class="page-title">My Orders</h1>
+                        <h1 class="page-title">{{__('website_trans.Order-details')}}</h1>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href="index.html"><i class="lni lni-home"></i> Home</a></li>
-                        <li>Order_Details</li>
+                        <li><a href="index.html"><i class="lni lni-home"></i>{{__('website_trans.Home')}} </a></li>
+                        <li>{{__('website_trans.Order-details')}}</li>
                     </ul>
                 </div>
             </div>
