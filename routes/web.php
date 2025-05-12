@@ -44,50 +44,70 @@ Route::group(
             'middleware' => ['isadmin','auth'],
             'prefix' => 'admin',
         ],function(){
+            // manage dashboard
             Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
+
+            // manage categories
             Route::resource('/categories',CategoryController::class);
+
+            // manage products
             Route::resource('/products',ProductController::class);
+
+            // manage users
             Route::resource('/users',usercontroller::class);
+
+            // manage admins
             Route::get('/admins',[usercontroller::class,'admins'])->name('admins');
             Route::get('/admins/create',[usercontroller::class,'adminscreate'])->name('admins.create');
             Route::post('/admins/store',[usercontroller::class,'adminsstore'])->name('admins.store');
             Route::post('/admins/update/{id}',[usercontroller::class,'adminsupdate'])->name('admins.update');
             Route::get('/admins/edit/{id}',[usercontroller::class,'adminsedit'])->name('admins.edit');
+            Route::get('/admins/show/{id}',[usercontroller::class,'showadmins'])->name('showadmins');
+
+            // manage deliveries
             Route::post('/deliveries/update/{id}',[usercontroller::class,'deliveriesupdate'])->name('deliveries.update');
             Route::get('/deliveries/edit/{id}',[usercontroller::class,'deliveriesedit'])->name('deliveries.edit');
-            Route::get('/admins/show/{id}',[usercontroller::class,'showadmins'])->name('showadmins');
             Route::get('/deliveries',[usercontroller::class,'deliveries'])->name('deliveries');
             Route::get('/deliveries/create',[usercontroller::class,'deliveriescreate'])->name('deliveries.create');
             Route::post('/delivery/store',[usercontroller::class,'deliverystore'])->name('delivery.store');
             Route::get('/deliveries/show/{id}',[usercontroller::class,'showdeliveries'])->name('showdeliveries');
             Route::get('/deliveryOrders/{id}',[usercontroller::class,'deliveryOrders'])->name('deliveryOrders');
+
+            // manage orders
             Route::get('/orders',[ ordercontroller::class,'index'])->name('orders.index');
-            Route::resource('/reviews_product', ReviewsAdmincontroller::class);
             Route::get('/orderdetails/{id}',[ ordercontroller::class,'orderdetails'])->name('orderdetails');
             Route::patch('/addToDelivery/{id}',[ ordercontroller::class,'addToDelivery'])->name('order.addToDelivery');
-
             Route::get('/orderdetailsnotify/{id}',[notificationorderscontroller::class,'orderdetailsfornotification'])->name('orderdetailsfornotification');
             Route::get('/markall',[notificationorderscontroller::class,'markallnotify'])->name('markallnotify');
             Route::patch('/editstatus/{id}',[ ordercontroller::class,'editstatus'])->name('order.edit');
             Route::delete('/destroy/{id}',[ ordercontroller::class,'destroy'])->name('order.destroy');
+
+            //manage contact
             Route::get('contact',[admincontactcontroller::class,'index'])->name('contact.index');
             Route::delete('contact/destroy/{id}',[admincontactcontroller::class,'destroy'])->name('contact.destroy');
             Route::patch('contact/update/{id}',[admincontactcontroller::class,'update'])->name('contact.update');
-        });
 
-    Route::get('/', [websitecontroller::class,'index'])->name('home');
-    Route::get('/categories', [websiteController::class, 'getCategories'])->name('get_categories');
-    Route::get('/products', [websiteController::class, 'getproducts'])->name('getproducts');
-    Route::get('/category/{slug}', [websiteController::class, 'getCategoryBySlug'])->name('get_category_slug');
-    Route::get('/category/{category_slug}/{product_slug}', [websiteController::class, 'getProductBySlug'])->name('get_product_slug');
-    Route::post('/product/add_to_cart', [AddToCartController::class, 'addToCart'])->name('product.addToCart');
-    Route::resource('/productReview',productReviewcontroller::class);
+            //manage reviews_product
+            Route::resource('/reviews_product', ReviewsAdmincontroller::class);
+        });
+        // website routes
+        Route::get('/', [websitecontroller::class,'index'])->name('home');
+        // categories
+        Route::get('/categories', [websiteController::class, 'getCategories'])->name('get_categories');
+        Route::get('/category/{slug}', [websiteController::class, 'getCategoryBySlug'])->name('get_category_slug');
+        Route::get('/category/{category_slug}/{product_slug}', [websiteController::class, 'getProductBySlug'])->name('get_product_slug');
+        // products
+        Route::get('/products', [websiteController::class, 'getproducts'])->name('getproducts');
+        //products add to cart
+        Route::post('/product/add_to_cart', [AddToCartController::class, 'addToCart'])->name('product.addToCart');
+        //product reviews
+        Route::resource('/productReview',productReviewcontroller::class);
 
     Route::group([
         'middleware' => ['auth'],
 
     ],function(){
-          //////////////////////////////
+          ///////////////  delivery  routes  ///////////////
         Route::middleware(['is_delivery'])->group(function () {
             Route::get('dashboard_delivery',[dashboard_deliverycontroller::class,'index'])->name('dashboard_delivery');
             Route::get('/delivery/search', [dashboard_deliverycontroller::class, 'search'])->name('delivery.search');
@@ -97,36 +117,44 @@ Route::group(
 
         });
         //////////////////////////////
-        Route::get('cart',[AddToCartController::class,'index'])->name('cart.index');
+        //cart must be auth
+        Route::get( 'cart',[AddToCartController::class,'index'])->name('cart.index');
         Route::delete('cart/destroy/{id}',[AddToCartController::class,'destroy'])->name('cart.destroy');
         Route::post('cart/update',[AddToCartController::class,'update'])->name('cart.update');
+
+        // checkout
         Route::get('checkout/',[CheckOutController::class,'index'])->name('checkout.index');
         Route::post('checkout/CreateOrder',[CheckOutController::class,'CreateOrder'])->name('createorder');
+
         // Route::get('payment',[CheckOutController::class,'payment'])->name('payment');
+
+        // contact
         Route::get('/website/contact', [contactus::class,'index'])->name('contact');
         Route::post('/website/contact/send', [contactus::class,'store'])->name('contact.store');
+
+        //orders
         Route::get('Myoreders',[ordercontroller::class,'showmyorders'])->name('showmyorders');
         Route::get('orderdetails/{id}',[ordercontroller::class,'frontorderdetails'])->name('frontorderdetails');
         Route::get('/CancelOrder/{id}',[ ordercontroller::class,'CancelOrder'])->name('CancelOrder');
 
         ////////////////
-
-Route::get('payment', [paymentController::class, 'payment'])->name('payment');
-Route::get('payment-success', [paymentController::class, 'success'])->name('payment.success');
-Route::get('payment-cancel', [paymentController::class, 'cancel'])->name('payment.cancel');
+        //payments
+        Route::get('payment', [paymentController::class, 'payment'])->name('payment');
+        Route::get('payment-success', [paymentController::class, 'success'])->name('payment.success');
+        Route::get('payment-cancel', [paymentController::class, 'cancel'])->name('payment.cancel');
     });
 
 
     });
+        //login by social media
+        Route::get('auth/{provider}/redirect',[sociallogincontroller::class,'redirect'])
+        ->name('auth.socilaite.redirect');
+        Route::get('auth/{provider}/callback',[sociallogincontroller::class,'callback'])
+        ->name('auth.socilaite.callback');
 
-    Route::get('auth/{provider}/redirect',[sociallogincontroller::class,'redirect'])
-    ->name('auth.socilaite.redirect');
-    Route::get('auth/{provider}/callback',[sociallogincontroller::class,'callback'])
-    ->name('auth.socilaite.callback');
 
-
-
-    Route::get('/website/about-us', function () {
-        return view('website.about-us');
-    })->name('about');
+        //about us
+        Route::get('/website/about-us', function () {
+            return view('website.about-us');
+        })->name('about');
 

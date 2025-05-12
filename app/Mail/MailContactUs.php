@@ -21,7 +21,6 @@ class MailContactUs extends Mailable
     public $data2;
 
 
-
     /**
      * Create a new message instance.
      *
@@ -51,5 +50,5 @@ class MailContactUs extends Mailable
         // dd($this->data);
     }
 
-    
+
 }
