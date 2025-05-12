@@ -168,7 +168,7 @@
 
                             <button type="button" class="btn review-btn" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
-                                {{__('reviews_trans.Add Review')}}
+                                {{__('website_trans.Add Review')}}
                             </button>
 
                             @endif

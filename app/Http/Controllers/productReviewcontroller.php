@@ -15,8 +15,9 @@ class productReviewcontroller extends Controller
      */
     public function index()
     {
-        
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,12 +36,12 @@ class productReviewcontroller extends Controller
             'rating'=>'required|min:1|max:5',
             'review'=>'required|string'
         ]);
-        
+
         $product_review = product_review::create([
             'user_id'=>Auth::user()->id,
-            'product_id'=>$request->product_id, 
-            'rating'=>$request->rating, 
-            'review'=>$request->review, 
+            'product_id'=>$request->product_id,
+            'rating'=>$request->rating,
+            'review'=>$request->review,
         ]);
 
         $product=product::findOrFail($request->product_id);
@@ -57,7 +58,7 @@ class productReviewcontroller extends Controller
      */
     public function show(string $id)
     {
-        
+
     }
 
     /**

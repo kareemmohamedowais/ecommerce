@@ -52,8 +52,8 @@
                             </div>
                             @else
                                 <div class="col-md-3 col-lg-3 col-xl-2 offset-lg-1">
-                                    <h5 class="mb-0">{{__('website_trans.Out of Stock')}}</h5>
-                                    <span class="mb-0">{{__('website_trans.Max Stock Is')}} : {{$product_cart->qty}}</span>
+                                    <h5 class="mb-0">{{__('website_trans.OutofStock')}}</h5>
+                                    <span class="mb-0">{{__('website_trans.MaxStockIs')}} : {{$product_cart->qty}}</span>
                                 </div>
                             @endif
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
@@ -70,7 +70,7 @@
                 </div>
                     @php $total_price += $product_cart->Product->selling_price * $product_cart->qty ; @endphp
                 @empty
-                    <h6>{{__('website_trans.No products in cart')}}</h6>
+                    <h6>{{__('website_trans.Noproductsincart')}}</h6>
 
                 @endforelse
             </div>
